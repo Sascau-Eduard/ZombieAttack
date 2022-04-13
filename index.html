@@ -203,7 +203,7 @@
                     gameObjects.forEach(obj => {
                         if (obj.type == "player" && ((this.position.x - obj.position.x) ** 2 + (this.position.y - obj.position.y) ** 2) > (obj.size * 2) ** 2) {
                             let tempPosition = new Vector(obj.position.x, obj.position.y);
-                            this.velocity = tempPosition.sub(this.position).normalize().mul(0.5);
+                            this.velocity = tempPosition.sub(this.position).normalize().mul(0.1);
                             this.position.add(this.velocity);
                         }
                     })
