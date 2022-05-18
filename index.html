@@ -9,8 +9,30 @@
 </head>
 
 <body>
+<style>
+    canvas{
+        background-color: white;
 
-    <canvas id="canvas" width="800" height="800" style="border: 5px solid black;"></canvas>
+    }
+    body{
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        background-color: cadetblue;
+
+    }
+    button{
+        height: 20px;
+        width: 100px;
+        border-color: black;
+        color: black;
+        border-radius: 4px;
+        background-color: rgb(255, 255, 255);
+        margin: 20px;
+    }
+</style>
+    <canvas id="canvas" width="600" height="600" style="border: 5px solid black;"></canvas>
+     <button onclick="window.location.reload()">Ricomincia</button>
 
     <script>
         const canvas = document.getElementById("canvas");
@@ -180,7 +202,7 @@
 
                 context.fillStyle = "black"
                 context.font = "50px Arial"
-                context.fillText(`${this.ammo} / 30`, 600, 750)
+                context.fillText(`${this.ammo} / 30`, 420, 550)
 
                 context.fillRect(this.position.x - this.size, this.position.y - this.size * 1.5, this.size * 2, 5)
                 context.fillStyle = "green"
@@ -283,7 +305,7 @@
             }
 
             context.fillStyle = "black"
-            context.fillText(score, 400, 50)
+            context.fillText(score, 300, 50)
 
             gameObjects.forEach((gameObject, index) => {
                 if (gameObject.active) {
