@@ -297,11 +297,11 @@
             let dt = timestamp - then;
             elapsed += dt;
 
-            context.clearRect(0, 0, 800, 800);
+            context.clearRect(0, 0, 600, 600);
 
             if (elapsed >= 2000) {
                 elapsed = 0;
-                gameObjects.push(new Enemy(new Vector(Math.random() * 800, Math.random() * 800)))
+                gameObjects.push(new Enemy(new Vector(Math.random() * 600, Math.random() * 600)))
             }
 
             context.fillStyle = "black"
@@ -312,10 +312,10 @@
                     if (gameObject.type == "player") {
                         gameObject.shoot()
                         gameObject.check()
-                        if (gameObject.position.x >= 800 - gameObject.size || gameObject.position.x <= 0 + gameObject.size) {
+                        if (gameObject.position.x >= 600 - gameObject.size || gameObject.position.x <= 0 + gameObject.size) {
                             gameObject.position.x -= gameObject.velocity.x
                         }
-                        if (gameObject.position.y <= 0 + gameObject.size || gameObject.position.y >= 800 - gameObject.size) {
+                        if (gameObject.position.y <= 0 + gameObject.size || gameObject.position.y >= 600 - gameObject.size) {
                             gameObject.position.y -= gameObject.velocity.y
                         }
                     }
